@@ -1,11 +1,20 @@
 import typing
 
 import qtawesome
-from PyQt5 import QtGui
-from PyQt5.QtCore import QAbstractTableModel, QModelIndex, Qt, QVariant
-from PyQt5.QtWidgets import QItemDelegate, QPushButton, QHBoxLayout, QWidget, QTableView
+from PyQt5 import QtGui,QtCore,QtWidgets
+from PyQt5.QtCore import QAbstractTableModel, QModelIndex, Qt, QVariant, QSize
 
 from magicPillWindow import *
+from PyQt5.QtWidgets import QItemDelegate, QHBoxLayout, QWidget, QTableView
+
+
+class QPushButton(QtWidgets.QPushButton):
+    def __init__(self, *__args: any,clicked = None):
+        super(QPushButton,self).__init__(*__args)
+        self.setCursor(Qt.PointingHandCursor)
+        self.setIconSize(QSize(14, 14))
+
+
 
 
 class myTableModel(QAbstractTableModel):

@@ -5,15 +5,18 @@ from png import *
 from PyQt5.QtCore import QSize, Qt
 from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtGui import QPixmap, QIcon
-from PyQt5.QtWidgets import QHBoxLayout, QPushButton, QAbstractItemView, QTableView, QVBoxLayout, QSplitter, \
+from PyQt5.QtWidgets import QHBoxLayout, QAbstractItemView, QTableView, QVBoxLayout, QSplitter, \
     QApplication, QGroupBox, QLabel, QGridLayout, QLineEdit, QComboBox, QTextEdit, QCheckBox,QVBoxLayout,QListView
 from PyQt5.QtWidgets import QListWidget, QStackedWidget, QFrame
 from PyQt5.QtWidgets import QListWidgetItem, QSizePolicy
 from PyQt5.QtWidgets import QWidget, QSpacerItem, QHeaderView
+from querymodel import myTableModel, MyTableView, MyTableView1, MyTableView2, MyTableView3, MyTableView4, MyTableView5,MyTableView6, QPushButton
 from top import Top
 import qtawesome
 
 
+
+Version = "Version 4.0.0.0"
 
 
 class magicPillWindow(QWidget):
@@ -21,6 +24,8 @@ class magicPillWindow(QWidget):
 
     def __init__(self):
         super(magicPillWindow, self).__init__()
+        from bin import Version
+
         self.screenRect = QApplication.desktop().screenGeometry()
         self.width = self.screenRect.width()
         self.height = self.screenRect.height()
@@ -263,6 +268,26 @@ class magicPillWindow(QWidget):
 
         font-family: "PingFangSC-Regular";
 
+        }
+
+        QLabel{
+
+        width: 308px;
+
+        height: 16px;
+
+        color: #5b5d6a;
+
+        font-family: "PingFangSC-Regular";
+
+        font-size: 13px;
+
+        font-weight: 400;
+
+        line-height: 16px;
+
+        text-align: center;
+
         }''')
 
 
@@ -397,6 +422,9 @@ class taskWindow(QWidget):
         self.h1.addWidget(self.add_btn)
         # self.h1.addWidget(self.btn)
         self.h1.addWidget(QSplitter())
+        self.h1.addWidget(QSplitter())
+        self.h1.addWidget(QLabel(Version))
+        self.h1.addWidget(QSplitter())
         self.h1.addWidget(self.start_btn)
         self.h1.addWidget(self.stop_btn)
         self.h1.addWidget(self.delete_btn)
@@ -450,7 +478,7 @@ class agentWindow(QWidget):
 
         self.dic = {
             'header': ['ID', '名称', '数量', '操作'],
-            'data': [[1,1,1,1], [2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2],[2,2,2,2]]
+            'data': [[1,1,1,1], [2,2,2,2]]
         }
 
         self.add_btn = QPushButton(QIcon(':/static/add.png'),'添加代理')  # 添加代理按钮
@@ -476,7 +504,10 @@ class agentWindow(QWidget):
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
         # h1.addWidget(self.btn)
+        # h1.addWidget(QSplitter())
         h1.addWidget(QSplitter())
+        h1.addWidget(QLabel(Version))
+        h1.addWidget(QSplitter())        
         h1.addWidget(self.delete_btn)
 
         self.widget = QWidget()
@@ -585,6 +616,10 @@ class accountWindow(QWidget):
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
         # h1.addWidget(self.btn)
+        # h1.addWidget(QSplitter())
+        h1.addWidget(QLabel())
+        h1.addWidget(QSplitter())
+        h1.addWidget(QLabel(Version))
         h1.addWidget(QSplitter())
         h1.addWidget(self.logging)
         h1.addWidget(self.delete_btn)
@@ -715,6 +750,9 @@ class discountWindow(QWidget):
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
+        h1.addWidget(QLabel())
+        h1.addWidget(QSplitter())
+        h1.addWidget(QLabel(Version))
         # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
         h1.addWidget(self.select)
@@ -845,6 +883,9 @@ class giftWindow(QWidget):
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
+        h1.addWidget(QLabel())
+        h1.addWidget(QSplitter())
+        h1.addWidget(QLabel(Version))
         # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
         h1.addWidget(self.select)
@@ -972,6 +1013,9 @@ class addressWindow(QWidget):
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
+        # h1.addWidget(QLabel())
+        h1.addWidget(QSplitter())
+        h1.addWidget(QLabel(Version))
         # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
         h1.addWidget(self.delete_btn)
@@ -1090,6 +1134,11 @@ class orderWindow(QWidget):
 
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
+        # h1.addWidget(QLabel())
+        h1.addWidget(QSplitter())
+        h1.addWidget(QSplitter())
+        h1.addWidget(QLabel(Version))
+        # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
         h1.addWidget(self.export_btn)
         h1.addWidget(self.delete_btn)
@@ -1158,7 +1207,7 @@ class orderWindow(QWidget):
 		
 		
 
-class addTaskWindow(QFrame):
+class addTaskWindow(QWidget):
     """添加任务窗口"""
 
     def __init__(self):
@@ -1361,7 +1410,15 @@ class addTaskWindow(QFrame):
         self.setWindowFlag(Qt.FramelessWindowHint)
 
         # self.setStyleSheet('''''')
-        self.setStyleSheet('''QLabel{width: 24px;
+        self.setStyleSheet('''
+
+        					QWidget{
+
+                            background: #1e1f29;
+
+                            }
+
+        					QLabel{width: 24px;
 
 							height: 16px;
 
@@ -1550,6 +1607,24 @@ class addTaskWindow(QFrame):
             line-height: 16px;
 
             background: #5c5858;''')
+
+    def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
+        try:
+            self._endPos = e.pos() - self._startPos
+            self.move(self.pos() + self._endPos)
+        except:
+            pass
+
+    def mousePressEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QtCore.QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
         
   
 
@@ -1564,7 +1639,7 @@ class addTaskWindow(QFrame):
         self.close()
 
 
-class addAgentWindow(QFrame):
+class addAgentWindow(QWidget):
     '''添加代理窗口'''
 
     def __init__(self):
@@ -1993,6 +2068,24 @@ class addAgentWindow(QFrame):
             line-height: 16px;
 
             background: #5c5858;''')
+
+    def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
+        try:
+            self._endPos = e.pos() - self._startPos
+            self.move(self.pos() + self._endPos)
+        except:
+            pass
+
+    def mousePressEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QtCore.QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
         
 
 
@@ -2159,6 +2252,24 @@ class addUserWindow(QWidget):
 
             background: #5c5858;''')
 
+    def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
+        try:
+            self._endPos = e.pos() - self._startPos
+            self.move(self.pos() + self._endPos)
+        except:
+            pass
+
+    def mousePressEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QtCore.QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
+
     def confirm_btn_action(self):
         AccountFunc.confirm_btn_action(self)
         self.close()
@@ -2321,6 +2432,24 @@ class addDiscountWindow(QWidget):
             line-height: 16px;
 
             background: #5c5858;''')
+
+    def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
+        try:
+            self._endPos = e.pos() - self._startPos
+            self.move(self.pos() + self._endPos)
+        except:
+            pass
+
+    def mousePressEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QtCore.QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
 
     def confirm_btn_action(self):
         DiscountFunc.confirm_btn_action(self)
@@ -2622,6 +2751,24 @@ class addGiftWindow(QWidget):
             line-height: 16px;
 
             background: #5c5858;''')
+
+    def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
+        try:
+            self._endPos = e.pos() - self._startPos
+            self.move(self.pos() + self._endPos)
+        except:
+            pass
+
+    def mousePressEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QtCore.QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
 
     def confirm_btn_action(self):
         GiftFunc.confirm_btn_action(self)
@@ -3262,6 +3409,24 @@ class addAddressWindow(QWidget):
 
             }''')
 
+    def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
+        try:
+            self._endPos = e.pos() - self._startPos
+            self.move(self.pos() + self._endPos)
+        except:
+            pass
+
+    def mousePressEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QtCore.QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
+
     def submit_action(self):
         AddressFunc.confirm_btn_action(self)
         self.close()
@@ -3402,11 +3567,51 @@ class BillingWidget(QWidget):
         self.lineEdit_5.setPlaceholderText(' City')
         self.lineEdit_7.setPlaceholderText(' Postal Code')
         self.lineEdit_8.setPlaceholderText(' Email')
+        self.lineEdit_9.setPlaceholderText(' Phone Number')
         self.lineEdit_8.setReadOnly(True)
         self.lineEdit_8.setStyleSheet('''background: rgba(24,25,34,50);''')
-        self.lineEdit_9.setPlaceholderText(' Phone Number')
         self.checkBox.setText("Same With Shipping")
         self.comboBox.addItem(' State')
+
+        self.checkBox.stateChanged.connect(self.changecb)
+
+    def changecb(self):
+        if self.checkBox.isChecked():
+            self.lineEdit.setReadOnly(True)
+            self.lineEdit_2.setReadOnly(True)
+            self.lineEdit_3.setReadOnly(True)
+            self.lineEdit_4.setReadOnly(True)
+            self.lineEdit_5.setReadOnly(True)
+            self.lineEdit_7.setReadOnly(True)
+            self.lineEdit_9.setReadOnly(True)
+
+            self.lineEdit.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.lineEdit_2.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.lineEdit_3.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.lineEdit_4.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.lineEdit_5.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.lineEdit_7.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.lineEdit_9.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.comboBox.setStyleSheet('''background: rgba(24,25,34,50);''')
+            self.comboBox.setEnabled(False)
+        elif not self.checkBox.isChecked():
+            self.lineEdit.setReadOnly(False)
+            self.lineEdit_2.setReadOnly(False)
+            self.lineEdit_3.setReadOnly(False)
+            self.lineEdit_4.setReadOnly(False)
+            self.lineEdit_5.setReadOnly(False)
+            self.lineEdit_7.setReadOnly(False)
+            self.lineEdit_9.setReadOnly(False)
+            self.comboBox.setEnabled(True)
+
+            self.lineEdit.setStyleSheet('''background: rgba(24,25,34,100);''')
+            self.lineEdit_2.setStyleSheet('''background: rgba(24,25,34,100);''')
+            self.lineEdit_3.setStyleSheet('''background: rgba(24,25,34,100);''')
+            self.lineEdit_4.setStyleSheet('''background: rgba(24,25,34,100);''')
+            self.lineEdit_5.setStyleSheet('''background: rgba(24,25,34,100);''')
+            self.lineEdit_7.setStyleSheet('''background: rgba(24,25,34,100);''')
+            self.lineEdit_9.setStyleSheet('''background: rgba(24,25,34,100);''')
+            self.comboBox.setStyleSheet('''background: rgba(24,25,34,100);''')
 
 
 class PaymentWidget(QWidget):
@@ -3469,6 +3674,8 @@ class PaymentWidget(QWidget):
 
         # self.pushButton.clicked.connect(lambda:self.pushButton.setChecked(True))
 
+
+
     def boxClicked(self):
         self.lineEdit_2.setReadOnly(True)
         self.lineEdit_3.setReadOnly(True)
@@ -3491,9 +3698,9 @@ class PaymentWidget(QWidget):
         self.lineEdit_2.setReadOnly(False)
         self.lineEdit_3.setReadOnly(False)
         self.lineEdit_4.setReadOnly(False)
-        self.lineEdit_2.setStyleSheet('''background: rgba(24,25,34);''')
-        self.lineEdit_3.setStyleSheet('''background: rgba(24,25,34);''')
-        self.lineEdit_4.setStyleSheet('''background: rgba(24,25,34);''')
+        self.lineEdit_2.setStyleSheet('''background: rgba(24,25,34,100);''')
+        self.lineEdit_3.setStyleSheet('''background: rgba(24,25,34,100);''')
+        self.lineEdit_4.setStyleSheet('''background: rgba(24,25,34,100);''')
         self.comboBox.setStyleSheet('''QComboBox{
 
         					width: 110px;
@@ -3513,11 +3720,7 @@ class PaymentWidget(QWidget):
 
 
 
-class QPushButton(QPushButton):
-    def __init__(self, *__args: any,clicked = None):
-        super(QPushButton,self).__init__(*__args)
-        self.setCursor(Qt.PointingHandCursor)
-        self.setIconSize(QSize(14, 14))
+
 
 class QQComboBox(QComboBox):
 	def __init__(self):

@@ -798,6 +798,24 @@ class settingWindow(QWidget):
             self.gift_change.setChecked(False)
             self.order_btn.setChecked(True)
 
+    def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
+        try:
+            self._endPos = e.pos() - self._startPos
+            self.move(self.pos() + self._endPos)
+        except:
+            pass
+
+    def mousePressEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QtCore.QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
+        if e.button() == QtCore.Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
+
     def test_action(self):
         SettingFunc.test_action(self)
 
