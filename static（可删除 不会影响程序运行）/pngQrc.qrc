@@ -1,0 +1,53 @@
+<RCC>
+    <qresource prefix="/static">
+
+    		<file alias="2.jpg">2.jpg</file>
+
+		<file alias="account.png">account.png</file>
+
+		<file alias="accounth.png">accounth.png</file>
+
+		<file alias="add.png">add.png</file>
+
+		<file alias="address.png">address.png</file>
+
+		<file alias="addressh.png">addressh.png</file>
+
+		<file alias="agent.png">agent.png</file>
+
+		<file alias="agenth.png">agenth.png</file>
+
+		<file alias="close.png">close.png</file>
+
+		<file alias="code.png">code.png</file>
+
+		<file alias="codeh.png">codeh.png</file>
+
+		<file alias="delete.png">delete.png</file>
+
+		<file alias="gift.png">gift.png</file>
+
+		<file alias="gifth.png">gifth.png</file>
+
+		<file alias="logo.png">logo.png</file>
+
+		<file alias="min.png">min.png</file>
+
+		<file alias="order.png">order.png</file>
+
+		<file alias="orderh.png">orderh.png</file>
+
+		<file alias="pause.png">pause.png</file>
+
+		<file alias="setting.png">setting.png</file>
+
+		<file alias="start.png">start.png</file>
+
+		<file alias="task.png">task.png</file>
+
+		<file alias="taskh.png">taskh.png</file>
+
+
+	</qresource>
+</RCC>
+		
