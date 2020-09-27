@@ -277,7 +277,7 @@ class settingWindow(QWidget):
         self.app_token = QLabel('APP_token:')  # APP_token:标签
         self.label = QLabel('   设置')
 
-        self.language_combobox = QComboBox()
+        self.language_combobox = QQComboBox()
 
         # self.local_btn = QPushButton('本地模式')  # 本地模式按钮
         # self.local_btn.setCheckable(True)
@@ -319,6 +319,8 @@ class settingWindow(QWidget):
 
         self.chekbox1 = QCheckBox()
         self.chekbox2 = QCheckBox()
+        self.chekbox1.setCursor(Qt.PointingHandCursor)
+        self.chekbox2.setCursor(Qt.PointingHandCursor)
         self.chekboxl1 = QLabel('成功订单  ')
         self.chekboxl2 = QLabel('GC余额变动')
         # self.chekbox1.setLayoutDirection(Qt.RightToLeft)
@@ -835,6 +837,21 @@ class QPushButton(QPushButton):
         super(QPushButton,self).__init__(*__args)
         self.setCursor(Qt.PointingHandCursor)
         self.setIconSize(QSize(20, 20))
+
+class QQComboBox(QComboBox):
+    def __init__(self):
+        super(QQComboBox, self).__init__()
+        self.setCursor(Qt.PointingHandCursor)
+
+    def mousePressEvent(self, QMouseEvent):
+        self.showPopup()
+        
+
+    def showPopup(self):
+        QComboBox.showPopup(self)
+        pop = self.children()[1]
+        pop.setStyleSheet('''border-radius: 8px;background: #181922''')
+        pop.move(pop.x(), pop.y() + 5)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

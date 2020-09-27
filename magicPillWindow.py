@@ -416,6 +416,9 @@ class taskWindow(QWidget):
         self.tableView.setColumnWidth(7, 90)
         self.tableView.setColumnWidth(8, 111)
 
+        self.Version = QLabel(Version)
+        self.Version.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter|QtCore.Qt.AlignVCenter)
+
 
         self.layout = QVBoxLayout(self)
         self.h1 = QHBoxLayout()
@@ -423,11 +426,18 @@ class taskWindow(QWidget):
         # self.h1.addWidget(self.btn)
         self.h1.addWidget(QSplitter())
         self.h1.addWidget(QSplitter())
-        self.h1.addWidget(QLabel(Version))
-        self.h1.addWidget(QSplitter())
+        self.h1.addWidget(self.Version)
+        # self.h1.addWidget(QSplitter())
         self.h1.addWidget(self.start_btn)
         self.h1.addWidget(self.stop_btn)
         self.h1.addWidget(self.delete_btn)
+        self.h1.setStretch(0,2)
+        self.h1.setStretch(1,2)
+        self.h1.setStretch(2,2)
+        self.h1.setStretch(3,5)
+        self.h1.setStretch(4,2)
+        self.h1.setStretch(5,2)
+        self.h1.setStretch(6,2)
         # self.layout.addWidget(QSplitter())
         # self.setLayout(self.layout)
         self.widget = QWidget()
@@ -499,6 +509,8 @@ class agentWindow(QWidget):
         self.queryModel = myTableModel(self.dic['header'], self.dic['data'])
         self.tableView.setModel(self.queryModel)
 
+        self.Version = QLabel(Version)
+        self.Version.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter|QtCore.Qt.AlignVCenter)
 
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
@@ -506,9 +518,19 @@ class agentWindow(QWidget):
         # h1.addWidget(self.btn)
         # h1.addWidget(QSplitter())
         h1.addWidget(QSplitter())
-        h1.addWidget(QLabel(Version))
+        h1.addWidget(QSplitter())
+        h1.addWidget(self.Version)
+        h1.addWidget(QSplitter())
         h1.addWidget(QSplitter())        
         h1.addWidget(self.delete_btn)
+
+        h1.setStretch(0,2)
+        h1.setStretch(1,2)
+        h1.setStretch(2,2)
+        h1.setStretch(3,5)
+        h1.setStretch(4,2)
+        h1.setStretch(5,2)
+        h1.setStretch(6,2)
 
         self.widget = QWidget()
         self.widget.setLayout(h1)
@@ -612,17 +634,29 @@ class accountWindow(QWidget):
         self.queryModel = myTableModel(self.dic['header'], self.dic['data'])
         self.tableView.setModel(self.queryModel)
 
+        self.Version = QLabel(Version)
+        self.Version.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter|QtCore.Qt.AlignVCenter)
+
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
         # h1.addWidget(self.btn)
         # h1.addWidget(QSplitter())
-        h1.addWidget(QLabel())
         h1.addWidget(QSplitter())
-        h1.addWidget(QLabel(Version))
+        h1.addWidget(QSplitter())
+        h1.addWidget(self.Version)
         h1.addWidget(QSplitter())
         h1.addWidget(self.logging)
         h1.addWidget(self.delete_btn)
+
+
+        h1.setStretch(0,2)
+        h1.setStretch(1,2)
+        h1.setStretch(2,2)
+        h1.setStretch(3,5)
+        h1.setStretch(4,2)
+        h1.setStretch(5,2)
+        h1.setStretch(6,2)
         
         self.widget = QWidget()
         self.widget.setLayout(h1)
@@ -747,17 +781,27 @@ class discountWindow(QWidget):
         self.queryModel = myTableModel(self.dic['header'], self.dic['data'])
         self.tableView.setModel(self.queryModel)
 
+        self.Version = QLabel(Version)
+        self.Version.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter|QtCore.Qt.AlignVCenter)
+
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
-        h1.addWidget(QLabel())
         h1.addWidget(QSplitter())
-        h1.addWidget(QLabel(Version))
+        h1.addWidget(QSplitter())
+        h1.addWidget(self.Version)
         # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
         h1.addWidget(self.select)
         h1.addWidget(self.delete_btn)
         
+        h1.setStretch(0,2)
+        h1.setStretch(1,2)
+        h1.setStretch(2,2)
+        h1.setStretch(3,5)
+        h1.setStretch(4,2)
+        h1.setStretch(5,2)
+        h1.setStretch(6,2)
 
         self.widget = QWidget()
         self.widget.setLayout(h1)
@@ -880,16 +924,27 @@ class giftWindow(QWidget):
         self.queryModel = myTableModel(self.dic['header'], self.dic['data'])
         self.tableView.setModel(self.queryModel)
 
+        self.Version = QLabel(Version)
+        self.Version.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter|QtCore.Qt.AlignVCenter)
+
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
-        h1.addWidget(QLabel())
         h1.addWidget(QSplitter())
-        h1.addWidget(QLabel(Version))
+        h1.addWidget(QSplitter())
+        h1.addWidget(self.Version)
         # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
         h1.addWidget(self.select)
         h1.addWidget(self.delete_btn)
+
+        h1.setStretch(0,2)
+        h1.setStretch(1,2)
+        h1.setStretch(2,2)
+        h1.setStretch(3,5)
+        h1.setStretch(4,2)
+        h1.setStretch(5,2)
+        h1.setStretch(6,2)
 
         self.widget = QWidget()
         self.widget.setLayout(h1)
@@ -1010,15 +1065,27 @@ class addressWindow(QWidget):
         self.queryModel = myTableModel(self.dic['header'], self.dic['data'])
         self.tableView.setModel(self.queryModel)
 
+        self.Version = QLabel(Version)
+        self.Version.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter|QtCore.Qt.AlignVCenter)
+
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         h1.addWidget(self.add_btn)
         # h1.addWidget(QLabel())
         h1.addWidget(QSplitter())
-        h1.addWidget(QLabel(Version))
+        h1.addWidget(QSplitter())
+        h1.addWidget(self.Version)
         # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
+        h1.addWidget(QSplitter())
         h1.addWidget(self.delete_btn)
+        h1.setStretch(0,2)
+        h1.setStretch(1,2)
+        h1.setStretch(2,2)
+        h1.setStretch(3,5)
+        h1.setStretch(4,2)
+        h1.setStretch(5,2)
+        h1.setStretch(6,2)
         
         self.widget = QWidget()
         self.widget.setLayout(h1)
@@ -1132,16 +1199,28 @@ class orderWindow(QWidget):
         # self.tableView.setColumnWidth(13, 45)
         # self.tableView.setColumnWidth(14, 45)
 
+        self.Version = QLabel(Version)
+        self.Version.setAlignment(QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter|QtCore.Qt.AlignVCenter)
+
         layout = QVBoxLayout(self)
         h1 = QHBoxLayout(self)
         # h1.addWidget(QLabel())
         h1.addWidget(QSplitter())
         h1.addWidget(QSplitter())
-        h1.addWidget(QLabel(Version))
+        h1.addWidget(QSplitter())
+        h1.addWidget(self.Version)
         # h1.addWidget(self.btn)
         h1.addWidget(QSplitter())
         h1.addWidget(self.export_btn)
         h1.addWidget(self.delete_btn)
+
+        h1.setStretch(0,2)
+        h1.setStretch(1,2)
+        h1.setStretch(2,2)
+        h1.setStretch(3,5)
+        h1.setStretch(4,2)
+        h1.setStretch(5,2)
+        h1.setStretch(6,2)
         
 
         self.widget = QWidget()
@@ -2464,7 +2543,7 @@ class addGiftWindow(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.resize(800, 322)  # 这里被改动
+        self.resize(600, 322)  # 这里被改动
         # self.setFixedSize(self.width(), self.height())
 
 
@@ -3508,6 +3587,7 @@ class BillingWidget(QWidget):
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_6.addItem(spacerItem)
         self.checkBox = QtWidgets.QCheckBox(self)
+        self.checkBox.setCursor(Qt.PointingHandCursor)
         self.checkBox.setObjectName("checkBox")
         self.horizontalLayout_6.addWidget(self.checkBox)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -3621,16 +3701,16 @@ class PaymentWidget(QWidget):
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
+        # spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addWidget(QSplitter())
         self.comboBox = QQQComboBox(parent = self)
         self.comboBox.setObjectName("comboBox")
         self.horizontalLayout.addWidget(self.comboBox)
         self.pushButton = QPushButton(self)
         self.pushButton.setObjectName("pushButton")
         self.horizontalLayout.addWidget(self.pushButton)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem1)
+        # spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addWidget(QSplitter())
         self.verticalLayout.addLayout(self.horizontalLayout)
         spacerItem2 = QtWidgets.QSpacerItem(20, 96, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem2)
@@ -3654,6 +3734,11 @@ class PaymentWidget(QWidget):
         self.verticalLayout.setStretch(3, 2)
         self.verticalLayout.setContentsMargins(-1,50,-1,-1)
 
+        self.horizontalLayout.setStretch(0,1)
+        self.horizontalLayout.setStretch(1,1)
+        self.horizontalLayout.setStretch(2,1)
+        self.horizontalLayout.setStretch(3,1)
+
         self.pushButton.setText("Bank Card")
         self.lineEdit_2.setPlaceholderText(' Card Number')
         self.lineEdit_3.setPlaceholderText(' MM/YY')
@@ -3674,15 +3759,6 @@ class PaymentWidget(QWidget):
 
         # self.pushButton.clicked.connect(lambda:self.pushButton.setChecked(True))
 
-
-
-    def boxClicked(self):
-        self.lineEdit_2.setReadOnly(True)
-        self.lineEdit_3.setReadOnly(True)
-        self.lineEdit_4.setReadOnly(True)
-        self.lineEdit_2.setStyleSheet('''background: rgba(24,25,34,50);''')
-        self.lineEdit_3.setStyleSheet('''background: rgba(24,25,34,50);''')
-        self.lineEdit_4.setStyleSheet('''background: rgba(24,25,34,50);''')
         self.comboBox.setStyleSheet('''QComboBox{
 
                             border: 1px solid  #1fbc6f;
@@ -3692,6 +3768,34 @@ class PaymentWidget(QWidget):
 							height: 32px;
 
                             }''')
+
+        self.pushButton.setStyleSheet('''QPushButton{
+
+                            border: 1px solid  #1fbc6f;
+
+                            width: 150px;
+
+							height: 34px;
+
+                            }''')
+
+
+    def boxClicked(self):
+        self.lineEdit_2.setReadOnly(True)
+        self.lineEdit_3.setReadOnly(True)
+        self.lineEdit_4.setReadOnly(True)
+        self.lineEdit_2.setStyleSheet('''background: rgba(24,25,34,50);''')
+        self.lineEdit_3.setStyleSheet('''background: rgba(24,25,34,50);''')
+        self.lineEdit_4.setStyleSheet('''background: rgba(24,25,34,50);''')
+       #  self.comboBox.setStyleSheet('''QComboBox{
+
+       #                      border: 1px solid  #1fbc6f;
+
+       #                      width: 110px;
+
+							# height: 32px;
+
+       #                      }''')
         self.pushButton.setChecked(False)
 
     def buttonClicked(self):
@@ -3701,15 +3805,15 @@ class PaymentWidget(QWidget):
         self.lineEdit_2.setStyleSheet('''background: rgba(24,25,34,100);''')
         self.lineEdit_3.setStyleSheet('''background: rgba(24,25,34,100);''')
         self.lineEdit_4.setStyleSheet('''background: rgba(24,25,34,100);''')
-        self.comboBox.setStyleSheet('''QComboBox{
+       #  self.comboBox.setStyleSheet('''QComboBox{
 
-        					width: 110px;
+       #  					width: 110px;
 
-							height: 32px;
+							# height: 32px;
 
-                            border: none;
+       #                      border: none;
 
-                            }''')
+       #                      }''')
 
         
 
@@ -3725,6 +3829,7 @@ class PaymentWidget(QWidget):
 class QQComboBox(QComboBox):
 	def __init__(self):
 		super(QQComboBox, self).__init__()
+		self.setCursor(Qt.PointingHandCursor)
 
 	def mousePressEvent(self, QMouseEvent):
 		self.showPopup()
@@ -3741,6 +3846,7 @@ class QQQComboBox(QComboBox):
 		super(QQQComboBox, self).__init__(parent)
 		self.parent = parent
 		self.checked = 0
+		self.setCursor(Qt.PointingHandCursor)
 
 	def mousePressEvent(self, QMouseEvent):
 		self.checked = 1
